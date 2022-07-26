@@ -37,17 +37,27 @@ stages:
   - stage: Deploy
     displayName: Deploy Stage
     jobs:
-      - job: deploy
-        displayName: Deploy 
-        pool:
-          vmImage: $(vmImageName)
-        steps:
-          - task: InstallSSHKey@0
-            inputs:
-              knownHostsEntry: '20.115.92.201'
-              sshKeySecureFile: 'azure-ssh.pem'
-          - task: SSH@0
-            inputs:
-              sshEndpoint: 'azureuser@20.115.92.201'
-              commands: mkdir hello
+      - deployment: VMDeploy
+        displayName: Deploy to VM
+        environment: 
+          name: azure-cicd
+          resourceType: VirtualMachine
+        strategy:
+          runOnce:
+            deploy:   
+              steps:
+                - script: mkdir hello
+      # - job: deploy
+      #   displayName: Deploy 
+      #   pool:
+      #     vmImage: $(vmImageName)
+      #   steps:
+      #     - task: InstallSSHKey@0
+      #       inputs:
+      #         knownHostsEntry: '20.115.92.201'
+      #         sshKeySecureFile: 'azure-ssh.pem'
+      #     - task: SSH@0
+      #       inputs:
+      #         sshEndpoint: 'azureuser@20.115.92.201'
+      #         commands: mkdir hello
 
