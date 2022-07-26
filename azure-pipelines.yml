@@ -6,12 +6,39 @@
 trigger:
 - main
 
-pool:
-  vmImage: ubuntu-latest
+variables:
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+  # Azure Resource Manager connection created during pipeline creation
+  azureSubscription: '00001111-0000-1111-2222-000011112222'
+  
+  # Web app name
+  webAppName: 'nodejs-cicd-16353'
+  
+  # Environment name
+  environmentName: 'nodejs-cicd-16353'
+
+  # Agent VM image name
+  vmImageName: 'ubuntu-latest'
+
+stages:
+- stage: Build
+  displayName: Build stage
+  jobs:  
+  - job: Build
+    displayName: Build
+    pool:
+      vmImage: $(vmImageName) 
+    steps:
+    - task: NodeTool@0
+      inputs:
+      versionSpec: '16.x'
+    - script: |
+      npm install
+      npm run build --if-present
+      npm run test --if-present
+    displayName: 'npm install, build and test'  
+      
+
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
