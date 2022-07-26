@@ -46,3 +46,8 @@ stages:
             inputs:
               knownHostsEntry: '20.115.92.201'
               sshKeySecureFile: 'azure-ssh.pem'
+          - task: SSH@0
+            inputs:
+              sshEndpoint: '20.115.92.201'
+              commands: mkdir hello
+
