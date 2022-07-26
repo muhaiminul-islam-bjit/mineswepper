@@ -40,7 +40,7 @@ stages:
       - deployment: VMDeploy
         displayName: Deploy to VM
         environment: 
-          name: azure-cicd
+          name: Ci-cd Test machine
           resourceType: VirtualMachine
         strategy:
           runOnce:
