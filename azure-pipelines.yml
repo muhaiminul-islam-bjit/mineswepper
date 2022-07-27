@@ -39,6 +39,7 @@ stages:
     jobs:
       - deployment: VMDeploy
         displayName: Deploy to VM
+        timeoutInMinutes: '2'
         environment: 
           name: Ci-cd Test machine
           resourceType: VirtualMachine
