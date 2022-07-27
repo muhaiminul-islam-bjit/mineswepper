@@ -46,7 +46,12 @@ stages:
           runOnce:
             deploy:   
               steps:
-                - script: mkdir hello
+                - task: Bash@3
+                  inputs:
+                    targetType: 'inline'
+                    script: |
+                      cd /home
+                      mkdir hello
       # - job: deploy
       #   displayName: Deploy 
       #   pool:
