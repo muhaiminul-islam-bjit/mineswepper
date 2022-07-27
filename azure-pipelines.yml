@@ -51,7 +51,7 @@ stages:
                     targetType: 'inline'
                     script: |
                       cd /home
-                      mkdir hello
+                      echo "hello world"
       # - job: deploy
       #   displayName: Deploy 
       #   pool:
