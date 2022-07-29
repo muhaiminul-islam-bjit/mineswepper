@@ -3,7 +3,7 @@ const port = process.env.PORT || 3000;
 
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
-  const msg = 'Running using pipeline. checking pm2 v:4\n'
+  const msg = 'Final check\n'
   res.end(msg);
 });
 
