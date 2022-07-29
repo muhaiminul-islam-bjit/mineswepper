@@ -41,7 +41,7 @@ stages:
         displayName: Deploy to VM
         timeoutInMinutes: '3'
         environment: 
-          name: azure-public
+          name: azure-vm-2
           resourceType: VirtualMachine
         strategy:
           runOnce:
