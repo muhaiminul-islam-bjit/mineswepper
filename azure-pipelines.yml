@@ -41,7 +41,7 @@ stages:
         displayName: Deploy to VM
         timeoutInMinutes: '3'
         environment: 
-          name: Ci-cd Test machine
+          name: azure-vm-1
           resourceType: VirtualMachine
         strategy:
           runOnce:
