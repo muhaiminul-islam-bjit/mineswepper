@@ -69,5 +69,3 @@ stages:
   #                     npm install
   #                     pm2 stop all
   #                     pm2 start index.js
-      
-
