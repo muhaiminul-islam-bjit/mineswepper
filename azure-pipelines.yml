@@ -44,7 +44,7 @@ stages:
             inputs:
               knownHostsEntry: 'azureuser@220.115.92.201'
               sshKeySecureFile: 'azure-ssh.pem'
-          - bash: ssh ßßßßazureuser@220.115.92.201 && cd /home/azureuser/ && mkdir hello-world
+          - bash: ssh azureuser@220.115.92.201 && cd /home/azureuser/ && mkdir hello-world
             displayName: Test ssh 
           # - task: SSH@0
           #   inputs:
