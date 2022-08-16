@@ -44,12 +44,12 @@ stages:
             inputs:
               knownHostsEntry: 'azureuser@220.115.92.201'
               sshKeySecureFile: 'azure-ssh.pem'
-          - bash: ssh azureuser@220.115.92.201 && cd /home/azureuser/ && mkdir hello-world
-            displayName: Test ssh 
-          # - task: SSH@0
-          #   inputs:
-          #     sshEndpoint: 'azureuser@20.115.92.201'
-          #     commands: mkdir hello
+          # - bash: ssh azureuser@220.115.92.201 && cd /home/azureuser/ && mkdir hello-world
+          #   displayName: Test ssh 
+          - task: SSH@0
+            inputs:
+              sshEndpoint: 'azureuser@20.115.92.201'
+              commands: mkdir hello
   # - stage: Deploy
   #   displayName: Deploy Stage
   #   jobs:
