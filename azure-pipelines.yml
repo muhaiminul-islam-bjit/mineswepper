@@ -41,12 +41,12 @@ stages:
         steps:
           - task: InstallSSHKey@0
             inputs:
-              knownHostsEntry: '20.115.92.201'
+              knownHostsEntry: 'azureuser@220.115.92.201'
               sshKeySecureFile: 'azure-ssh.pem'
-          - task: SSH@0
-            inputs:
-              sshEndpoint: 'azureuser@20.115.92.201'
-              commands: mkdir hello
+          # - task: SSH@0
+          #   inputs:
+          #     sshEndpoint: 'azureuser@20.115.92.201'
+          #     commands: mkdir hello
   # - stage: Deploy
   #   displayName: Deploy Stage
   #   jobs:
