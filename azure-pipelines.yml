@@ -48,7 +48,7 @@ stages:
           #   displayName: Test ssh 
           - task: SSH@0
             inputs:
-              sshEndpoint: 'azureuser@20.115.92.201'
+              sshEndpoint: 'muhaimin-ssh'
               commands: mkdir hello
   # - stage: Deploy
   #   displayName: Deploy Stage
