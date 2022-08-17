@@ -44,7 +44,7 @@ stages:
             inputs:
               sshEndpoint: 'muhaimin-ssh'
               runOptions: 'commands' 
-              commands: cd app && git pull && pm2 startOrRestart ecosystem.json
+              commands: cd app && git pull && npm install -g pm2 && pm2 startOrRestart ecosystem.json
               # commands: echo "$SHELL"
                 
   
