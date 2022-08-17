@@ -44,8 +44,8 @@ stages:
             inputs:
               sshEndpoint: 'muhaimin-ssh'
               runOptions: 'commands' 
-              # commands: cd app && git pull && ls /home/azureuser/.nvm/versions/node/v16.0.0/bin/
-              commands: cd app && git pull && /home/azureuser/.nvm/versions/node/v16.0.0/bin/pm2 startOrRestart ecosystem.json
+              commands: cd app && git pull && ls /home/azureuser/.nvm/versions/node/v16.0.0/bin/pm2
+              # commands: cd app && git pull && /home/azureuser/.nvm/versions/node/v16.0.0/bin/pm2 startOrRestart ecosystem.json
               # commands: echo $PATH
                 
   
