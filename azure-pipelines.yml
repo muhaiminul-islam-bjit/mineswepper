@@ -43,4 +43,4 @@ stages:
           - task: SSH@0
             inputs:
               sshEndpoint: 'muhaimin-ssh'
-              commands: cd /home/azureuser/app; pwd; ls; git pull; pm2 startOrRestart ecosystem.json
+              commands: cd app; pwd; ls; git pull; pm2 startOrRestart ecosystem.json
