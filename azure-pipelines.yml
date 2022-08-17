@@ -43,8 +43,8 @@ stages:
           - task: SSH@0
             inputs:
               sshEndpoint: 'muhaimin-ssh'
-              runOptions: 'inline' 
-              inline: |
-                cd app
-                git pull
-                pm2 startOrRestart ecosystem.json
+              runOptions: 'commands' 
+              commands: cd app && git pull && pm2 startOrRestart ecosystem.json
+                
+                
+                
