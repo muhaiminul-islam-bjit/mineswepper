@@ -23,19 +23,19 @@ stages:
   - stage: Build
     displayName: Build stage
     jobs:
-      # - job: Build
-      #   displayName: Build
-      #   pool:
-      #     vmImage: $(vmImageName)
-      #   steps:
-      #     - task: NodeTool@0
-      #       inputs:
-      #         versionSpec: '16.x'
-      #     - script: |
-      #         npm install
-      #       displayName: 'npm install, build and test'
+      - job: Build
+        displayName: Build
+        pool:
+          vmImage: $(vmImageName)
+        steps:
+          - task: NodeTool@0
+            inputs:
+              versionSpec: '16.x'
+          - script: |
+              npm install
+            displayName: 'npm install, build and test'
       - job: deploy
-        # dependsOn: Build
+        dependsOn: Build
         displayName: Deploy 
         pool:
           vmImage: $(vmImageName)
@@ -45,6 +45,6 @@ stages:
               sshEndpoint: 'muhaimin-ssh'
               runOptions: 'commands' 
               # commands: cd app && git pull && /home/azureuser/.nvm/versions/node/v16.0.0/bin/pm2 list
-              commands: cd app && git pull && /home/azureuser/.nvm/versions/node/v16.0.0/bin/pm2 startOrRestart ecosystem.json
+              commands: cd app && git checkout main && git pull && /home/azureuser/.nvm/versions/node/v16.0.0/bin/pm2 startOrRestart ecosystem.json
               # commands: echo $PATH
                 
