@@ -45,6 +45,6 @@ stages:
               sshEndpoint: 'muhaimin-ssh'
               runOptions: 'inline' 
               inline: |
-                cd /app
+                cd app
                 git pull
                 pm2 startOrRestart ecosystem.json
