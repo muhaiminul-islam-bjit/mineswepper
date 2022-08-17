@@ -43,4 +43,5 @@ stages:
           - task: SSH@0
             inputs:
               sshEndpoint: 'muhaimin-ssh'
-              commands: " cd muhaimin; mkdir ikhlas; ls"
+              runOptions: 'commands' 
+              commands: "cd muhaimin; mkdir ikhlas; ls"
