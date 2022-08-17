@@ -43,4 +43,4 @@ stages:
           - task: SSH@0
             inputs:
               sshEndpoint: 'muhaimin-ssh'
-              commands: "cd app/; pwd; ls; git pull; pm2 startOrRestart ecosystem.json"
+              commands: "mkdir muhaimin; cd muhaimin; pwd"
