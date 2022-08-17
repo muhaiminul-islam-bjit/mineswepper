@@ -40,35 +40,7 @@ stages:
         pool:
           vmImage: $(vmImageName)
         steps:
-          # - task: InstallSSHKey@0
-          #   inputs:
-          #     knownHostsEntry: 'azureuser@220.115.92.201'
-          #     sshKeySecureFile: 'azure-ssh.pem'
-          # - bash: ssh azureuser@220.115.92.201 && cd /home/azureuser/ && mkdir hello-world
-          #   displayName: Test ssh 
           - task: SSH@0
             inputs:
               sshEndpoint: 'muhaimin-ssh'
-              commands: mkdir hello
-  # - stage: Deploy
-  #   displayName: Deploy Stage
-  #   jobs:
-  #     - deployment: VMDeploy
-  #       displayName: Deploy to VM
-  #       timeoutInMinutes: '3'
-  #       environment: 
-  #         name: 4digit
-  #         resourceType: VirtualMachine
-  #       strategy:
-  #         runOnce:
-  #           deploy:   
-  #             steps:
-  #               - task: Bash@3
-  #                 inputs:
-  #                   targetType: 'inline'
-  #                   script: |
-  #                     cd /home/azureuser/app/
-  #                     git pull
-  #                     npm install
-  #                     pm2 stop all
-  #                     pm2 start index.js
+              commands: cd /home/azureuser/app/; git pull; pm2 startOrRestart ecosystem.json

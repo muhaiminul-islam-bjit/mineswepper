@@ -1,0 +1,10 @@
+{
+    "apps": [{
+      "name": "my-app",
+      "script": "./index.js",
+      "cwd": "./", 
+      "error_file": "./app.err.log",
+      "out_file": "./logs/app.out.log", 
+      "exec_mode": "fork_mode"
+    }]
+  }
